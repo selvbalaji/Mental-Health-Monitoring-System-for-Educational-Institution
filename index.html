@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Student Mental Health Prediction</title>
+    <style>body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width:500px;
+        
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }</style>
+</head>
+<body>
+    <h1>Student Mental Health Prediction</h1>
+    
+    <form action="/predict" method="post">
+        <div><label for="name">Name:</label>
+            <input type="text" name="name" required>
+            
+            <label for="age">Age:</label>
+            <input type="number" name="age" required>
+            
+            <label for="gender">Gender:</label>
+            <select name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            
+            <label for="year">Year:</label>
+            <select name="year" required>
+                <option value="I Year">I Year</option>
+                <option value="II Year">II Year</option>
+                <option value="III Year">III Year</option>
+                <option value="IV Year">IV Year</option>
+                <!-- Add more options as needed -->
+            </select>
+    
+            <label for="work_load">Work Load:</label>
+            <select name="work_load" required>
+                <option value="Average">Average</option>
+                <option value="Heavy">Heavy</option>
+                <option value="Easy">Easy</option>
+            </select>
+    
+            <label for="edu_level">Edu Level:</label>
+            <select name="edu_level" required>
+                <option value="Average">Average</option>
+                <option value="Good">Good</option>
+                <option value="Slow learner">Slow learner</option>
+            </select></div>
+        
+            <div>
+                <label for="fear_of_failure">Fear of Failure in Exam:</label>
+        <select name="fear_of_failure" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="alcohol_or_drugs">Alcohol or Drugs:</label>
+        <select name="alcohol_or_drugs" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="social_media_usage">Social Media Usage:</label>
+        <input type="number" name="social_media_usage" required>
+
+        <label for="alone">Like To Be Alone:</label>
+        <select name="alone" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="study_hours">Study Hours:</label>
+        <input type="number" name="study_hours" required>
+        <button type="submit">Predict</button>
+            </div>
+        
+
+        
+    </form>
+</body>
+</html>
